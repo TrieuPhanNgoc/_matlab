@@ -1,0 +1,16 @@
+%%----------------DEFINE ROM---------------
+%%-----CAR MODEL: L21B
+%%-----PART NUMBER:91N32
+%%----------------------------------------
+TURN_ON_TIMER_CTA = 100;
+TURN_OFF_TIMER_CTA = 50;
+TURN_ON_TIMER_BSI = 100;
+TURN_OFF_TIMER_BSI = 150;
+TURN_ON_TIMER_DDA = 200;
+TURN_OFF_TIMER_DDA = 80;
+TURN_ON_TIMER_FEB = 100;
+TURN_OFF_TIMER_FEB = 50;
+HIGH_VOLTAGE_1 = 5;
+LOW_VOLTAGE_0 = 0;
+% Adding more
+SEN_VAL_ANALOG = 45;
