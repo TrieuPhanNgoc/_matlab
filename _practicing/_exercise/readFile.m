@@ -9,8 +9,8 @@ function [] = readFile(src_path, param_path,value_path)
     while ischar(line)
         % Passing the comment line
         if ~contains(line, '%')
+            remove(line,';');
             split_line_arr = split(line);
-    
             % Writing param and value
             fprintf(file_param,char(split_line_arr(1)));
             fprintf(file_param,'\n');

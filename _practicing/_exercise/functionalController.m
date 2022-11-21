@@ -50,8 +50,35 @@ readFile('ROM.m','parameter.txt','value.txt');
 %{
     Exercise 8
 %}
-param_T = readtable('parameter.txt');
-value_T = readtable('value.txt');
+
 excel_file = 'result.csv';
-writetable(param_T,excel_file,'Delimiter',' ');
-%writetable(value_T,excel_file,'Sheet',1);
+param_read = fopen('parameter.txt', 'r');
+value_read = fopen('value.txt', 'r');
+line_param = fgetl(param_read);
+line_value = fgetl(value_read);
+
+% Getting column of param
+param_col = [];
+while ischar(line_param)
+    param_col = cat(1,param_col,string(line_param));
+    % next line
+    line_param = fgetl(param_read);
+end
+disp(param_col);
+
+% Getting column of value
+value_col = [];
+while ischar(line_value)
+    %value_col = cat(1, value_col, int32(line_value));
+    % next line
+    line_value = fgetl(value_read);
+end
+disp(value_col);
+
+%writematrix(["Variable", "value"],excel_file);
+%xlswrite(excel_file, A, 1,'A1');
+%writematrix(M, excel_file, 'Sheet', 1);
+
+fclose(param_read);
+fclose(value_read);
+
